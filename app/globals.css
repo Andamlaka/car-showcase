@@ -9,8 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
-  
-  overflow-x: hidden;
+  overflow-x: none;
 }
 
 /* START: General styles */
