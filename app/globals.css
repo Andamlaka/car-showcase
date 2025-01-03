@@ -9,6 +9,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
+  
+  overflow-x: hidden;
 }
 
 /* START: General styles */
@@ -66,7 +68,8 @@
 /* START: Home styles */
 
 .home__text-container {
-  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
+  @apply flex flex-col items-start justify-start gap-y-2.5
+   text-black-100 ;
 }
 
 .home__filters {

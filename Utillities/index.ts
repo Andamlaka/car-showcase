@@ -7,7 +7,7 @@ export async function fetchCars() {
     };
   
     try {
-      const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera', {
+      const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3', {
         headers: headers,
       });
   
@@ -33,9 +33,19 @@ export async function fetchCars() {
     const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
     return rentalRatePerDay.toFixed(0);
   };
-  export const generateImageUrl = (car:CarProps, angle?:string) => 
-  {
-
-  }
+  export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+    const url = new URL("https://cdn.imagin.studio/getimage");
+    const { make, model, year } = car;
+  
+    url.searchParams.append('customer', "img");
+    url.searchParams.append('make', make || 'unknown');
+    url.searchParams.append('modelFamily', model?.split(" ")[0] || model || 'unknown');
+    url.searchParams.append('zoomType', 'fullscreen');
+    url.searchParams.append('modelYear', year ? `${year}` : '2020');
+    url.searchParams.append('angle', angle || 'front');
+  
+    return url.toString();
+  };
+  
 
   
