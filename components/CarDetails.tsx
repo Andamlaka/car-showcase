@@ -44,7 +44,7 @@ const CarDetails = ({isOpen, closeModel, car}:
                         >
                             <button type='button' className='absolute top-2 right-2
                              z-10 w-fit p-2 bg-primary-blue-100 rounded-full' 
-                             onClick={closeModel}>
+                             onClick={closeModel} title='Close'>
                                 <Image src="/public/close.svg"
                                  alt="close" width={20} height={20} 
                                  className="object-contain" />

@@ -1,3 +1,5 @@
+import { CarProps } from '@/types';
+
 export async function fetchCars() {
     const headers = {
       'x-rapidapi-key': '4ff0da26f4msh0422bc0a64e4733p1fe625jsndad512db6c34',
@@ -5,7 +7,7 @@ export async function fetchCars() {
     };
   
     try {
-      const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla', {
+      const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=carrera', {
         headers: headers,
       });
   
@@ -31,3 +33,9 @@ export async function fetchCars() {
     const rentalRatePerDay = basePricePerDay + mileageRate + ageRate;
     return rentalRatePerDay.toFixed(0);
   };
+  export const generateImageUrl = (car:CarProps, angle?:string) => 
+  {
+
+  }
+
+  
