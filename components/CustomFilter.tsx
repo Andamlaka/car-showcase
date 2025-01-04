@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import {Listbox, Transition} from '@headlessui/react'
 import {CustomFilterProps} from '@/types'
 import { updateSearchParams } from '@/Utillities'
-const CustomFilter = ({title, options, setFilter}: 
+const CustomFilter = ({title, options, setFilter, setFilterNumber}: 
   CustomFilterProps) => {
    
     const [selected, setSelected] = useState(options[0])
@@ -18,6 +18,8 @@ const CustomFilter = ({title, options, setFilter}:
       onChange={(e) => {
         setSelected(e);
        setFilter(e.value)
+       const numberValue = parseInt(e.value);
+       setFilterNumber(numberValue)
       }}
       >
         <div className='relative w-fit z-10'>
