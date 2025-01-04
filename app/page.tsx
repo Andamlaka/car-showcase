@@ -5,11 +5,11 @@ import Image from "next/image";
 
 import { fetchCars } from "@/Utillities";
 import { fuels, yearsOfProduction } from "@/constants";
-import { CarCard, ShowMore, SearchBar, CustomFilter, Hero } from "@components";
-
+import { CarCard, ShowMore, SearchBar, CustomFilter, Hero } from "@/components";
+import { CarState } from "@/types";
 
 export default function Home() {
-  const [allCars, setAllCars] = useState([]);
+  const [allCars, setAllCars] = useState<CarState>([]);
   const [loading, setLoading] = useState(false);
 
   // search states
